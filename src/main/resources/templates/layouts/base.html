@@ -57,15 +57,19 @@
 
     <th:block layout:fragment="body" th:remove="tag">
         <!-- Body details are added by ThymeLeaf layout consumer -->
-        <div class="container">
-            <h1>Welcome to JARP Stocks</h1>
-            <p>JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1>Welcome to JARP Stocks</h1>
+                    <p class="lead">JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
+                </div>
+            </div>
         </div>
     </th:block>
 
     <th:block th:replace="layouts/footer :: footer" th:remove="tag">
         <!-- Standard footer -->
-        <footer class="bg-light text-center">
+        <footer class="bg-light text-center mt-5">
             <div class="container py-3">
                 <p>&copy; 2023 Your Company. All rights reserved.</p>
             </div>
