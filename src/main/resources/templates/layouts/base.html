@@ -7,81 +7,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <!-- JQuery JS -->
-    <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
-    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
     <!-- Project CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/scss/custom.css}">
 
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555555;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Add any additional custom styles here */
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #007bff;
+            padding: 20px;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #555555;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
-    <th:block th:replace="layouts/nav :: header" th:remove="tag">
-        <!-- Standard header and Navigation -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <a class="navbar-brand" href="#">Your Brand</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </th:block>
-
-    <th:block layout:fragment="body" th:remove="tag">
-        <!-- Body details are added by ThymeLeaf layout consumer -->
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h1>Welcome to JARP Stocks</h1>
-                    <p class="lead">JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
-                </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </th:block>
+    </nav>
 
-    <th:block th:replace="layouts/footer :: footer" th:remove="tag">
-        <!-- Standard footer -->
-        <footer class="bg-light text-center mt-5">
-            <div class="container py-3">
-                <p>&copy; 2023 Your Company. All rights reserved.</p>
-            </div>
-        </footer>
-    </th:block>
+    <div class="container">
+        <h1>Welcome to JARP Stocks</h1>
+        <p>JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2023 Your Company. All rights reserved.
+        </div>
+    </footer>
 
     <!-- Bootstrap 5.0 Bundle with Popper -->
-    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js}"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-<th:block layout:fragment="script" th:remove="tag"></th:block>
 
 </html>
