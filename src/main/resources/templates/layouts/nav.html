@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
@@ -20,61 +20,89 @@
     <!-- Project CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/scss/custom.css}">
 
+    <style>
+        /* Custom CSS for navbar */
+        .navbar {
+            background-color: #f8f9fa; /* Set the desired background color */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #000000 !important; /* Set the desired font color */
+        }
+
+        .navbar-toggler {
+            border-color: #000000; /* Set the desired color for the toggler icon */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #000000; /* Set the desired background color for the toggler icon */
+        }
+    </style>
+
 </head>
 
 <body>
     <th:block th:replace="layouts/nav :: header" th:remove="tag">
         <!-- Standard header and Navigation -->
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <a class="navbar-brand" href="#">Your Brand</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="btn-group">
+                        <img alt="" class="d-inline-block align-center"
+                             src=""
+                             th:src="@{/images/ncs_logo.png}"
+                             height="50"
+                             width="auto">
+                        <a class="navbar-brand" th:href="@{https://nighthawkcodingsociety.com}">Everything Stocks</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarHome">
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item active">
+                                    <a class="nav-link" th:href="@{/login}">Login<span class="sr-only"></span></a>
+                                </li>
+
+                                <li class="nav-item active">
+                                    <a class="nav-link" th:href="@{/mvc/stock/read}">Stock Table<span class="sr-only"></span></a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
+
+                    <div class="btn-group">
+                        <!-- Search Box -->
+                        <div class="px-3" style="height:30px;">
+                            <input id="search" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                        <!-- Clock display -->
+                        <div class="px-3 text-dark">
+                            <span id="clock"></span>
+                        </div>
+
+                        <!-- Dark mode action -->
+                        <div class="form-check form-switch">
+                            <label class="custom-control-label" for="darkSwitch"></label>
+                            <input type="checkbox" onclick="darkFunction()" class="form-check-input link-dark" id="darkSwitch">
+                        </div>
+                    </div>
+
+                    <!-- Navigation bar JavaScript support -->
+                    <script>
+                        // Rest of your JavaScript code
+                    </script>
                 </div>
             </nav>
         </header>
     </th:block>
 
-    <th:block layout:fragment="body" th:remove="tag">
-        <!-- Body details are added by ThymeLeaf layout consumer -->
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h1>Welcome to JARP Stocks</h1>
-                    <p class="lead">JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
-                </div>
-            </div>
-        </div>
-    </th:block>
-
-    <th:block th:replace="layouts/footer :: footer" th:remove="tag">
-        <!-- Standard footer -->
-        <footer class="bg-light text-center mt-5">
-            <div class="container py-3">
-                <p>&copy; 2023 Your Company. All rights reserved.</p>
-            </div>
-        </footer>
-    </th:block>
+    <!-- Rest of your HTML code -->
 
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js}"
