@@ -1,6 +1,4 @@
-<!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
-<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layouts/base}" lang="en">
 
@@ -11,7 +9,10 @@
 <body>
 <th:block layout:fragment="body" th:remove="tag">
     <!-- Start of body content specific to page -->
-
+    <div>
+        <h1>Welcome to JARP Stocks</h1>
+        <p>JARP Stocks provides comprehensive market data and education on stocks to help you make informed investment decisions.</p>
+    </div>
     <!-- End of body content specific to page -->
 </th:block>
 </body>
